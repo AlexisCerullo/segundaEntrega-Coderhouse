@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
     --celesteOscuro: #6096B4;
     --celesteClaro: #93BFCF;
@@ -26,37 +32,83 @@ input {
 }
 
 .contenedor {
-    width: 90%;
-    margin: 0 auto;
     background-color: var(--gris);
 }
+
+@media (min-width: 768px) {
+    .contenedor {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
 
 .titulo {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: space-evenly;
 }
 
-.titulo a {
-    margin: 50px;
+.contenedor-logo {
+    width: 100%;
 }
 
-.titulo img {
+.contenedor-logo a img {
     border: solid rgba(0, 0, 0, 0.5) 2px;
     background-color: var(--colorFondo);
     border-radius: 50%;
-    height: 250px;
+    width: 50%;
+    margin: 5%;
 }
 
-.nombreLogo {
-    font-size: 80px;
-    width: 100%;
-    text-align: center;
-    margin-right: 25%;
+@media (min-width: 768px) {
+    .contenedor-logo {
+        width: 100%;
+    }
 }
+
+@media (min-width: 480px) {
+    .nombreLogo {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .nombreLogo {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 80px;
+        width: 100%;
+    }
+}
+
+.navbar {
+    width: 30%;
+}
+
+.navbar .container-fluid {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.navbar-toggler {
+    background-color: var(--celesteOscuro);
+    border: 2px solid;
+    width: 50%;
+    height: 25%;
+}
+
+.navbar-toggler-icon {
+    width: 70%;
+}
+
 
 nav ul {
     display: flex;
+    flex-direction: column;
     padding: 0;
     text-align: center;
 }
@@ -74,9 +126,24 @@ nav ul a:hover {
 }
 
 nav ul a li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     list-style: none;
     font-size: 25px;
     color: var(--grisOscuro);
+}
+
+
+@media (min-width: 768px) {
+    nav ul {
+        flex-direction: row;
+    }
+
+    .navbar-toggler {
+        display: none;
+    }
 }
 
 
@@ -114,10 +181,16 @@ nav ul a li {
 }
 
 .detalles {
-    margin: 20px 20px 50px 20px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    margin: 5% 3% 5% 3%;
+}
+
+@media (min-width: 1024px) {
+    .detalles {
+        flex-direction: row;
+    }
 }
 
 .video,
@@ -125,7 +198,16 @@ nav ul a li {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    margin-top: 5%;
+}
+
+@media (min-width: 1024px) {
+
+    .video,
+    .direccion {
+        width: 50%;
+        margin-top: 0;
+    }
 }
 
 .video {
@@ -134,10 +216,18 @@ nav ul a li {
 
 .video iframe {
     width: 90%;
+    margin: 5%;
+}
+
+@media (min-width: 1024px) {
+    .video iframe {
+        margin: 0;
+    }
 }
 
 h3 {
     font-size: 30px;
+    text-align: center;
 }
 
 .direccion p {
@@ -152,16 +242,31 @@ h3 {
 
 .impresoras {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-around;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .impresoras {
+        flex-direction: row;
+        justify-content: space-around;
+    }
 }
 
 .impresora {
-    width: 40%;
     border-radius: 15%;
     display: flex;
-    margin: 3% 0;
+    margin: 5%;
+}
+
+
+@media (min-width: 1024px) {
+    .impresora {
+        min-height: 45vh;
+        width: 40%;
+        margin: 3% 0;
+    }
 }
 
 .impresora img {
@@ -194,16 +299,32 @@ h3 {
 
 .detalleImpresora {
     text-align: center;
-    line-height: 25px;
     height: 100%;
     display: flex;
     align-items: center;
 }
 
+@media (min-width: 1024px) {
+    .detalleImpresora {
+        line-height: 25px;
+    }
+}
+
+.capacitacion {
+    margin-bottom: 5%;
+}
+
 .capacitacion {
     display: flex;
-    gap: 30px;
-    margin: 50px;
+    flex-direction: column;
+    gap: 10vh;
+}
+
+@media (min-width: 1024px) {
+    .capacitacion {
+        flex-direction: row;
+        margin: 50px;
+    }
 }
 
 .capacitacionDetalle {
@@ -211,6 +332,13 @@ h3 {
     gap: 20px;
     flex-direction: column;
     justify-content: center;
+    margin: 0 5%;
+}
+
+@media (min-width: 1024px) {
+    .capacitacionDetalle {
+        margin: 0;
+    }
 }
 
 .capacitacionTitulo {
@@ -219,7 +347,14 @@ h3 {
 }
 
 .capacitacion img {
-    width: 40%;
+    width: 70%;
+    margin: 5% auto 0 auto;
+}
+
+@media (min-width: 1024px) {
+    .capacitacion img {
+        width: 40%;
+    }
 }
 
 .nosotros {
@@ -245,6 +380,14 @@ h3 {
 
 .contacto {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .contacto {
+        flex-direction: row;
+    }
 }
 
 .contacto h2 {
@@ -253,7 +396,6 @@ h3 {
 
 .redesContacto,
 .formularioContacto {
-    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -261,19 +403,46 @@ h3 {
     margin: 5%;
 }
 
-.redesImagenes {
-    display: flex;
-    flex-direction: row;
+@media (min-width: 1024px) {
+    .redesContacto,
+    .formularioContacto {
+        width: 50%;
+    }
 }
 
-.redesImagenes img {
-    width: 80%;
-    margin: 30px;
+.redesImagenes {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
+
+@media (min-width: 1024px) {
+    .redesImagenes {
+        flex-wrap: nowrap;
+    }
+}
+
 
 .redesContacto p {
     font-size: 20px;
     font-style: italic;
+}
+
+.red {
+    width: 40%;
+    padding: 5%;
+}
+
+.red img {
+    max-width: 80%;
+}
+
+@media (min-width: 1024px) {
+    .red {
+        width: 80%;
+    }
 }
 
 .formulario {
@@ -294,21 +463,36 @@ h3 {
     border: solid var(--grisOscuro) 2px;
 }
 
-.formulario input {
-    width: 50%;
+
+.formulario input, .formulario textarea, .formulario input[type=submit] {
+    width: 100%;
 }
 
 .formulario textarea {
-    width: 80%;
-    height: 20vh;
+    height: 40vh;
 }
 
 .formulario input[type=submit] {
-    width: 30%;
     height: 10%;
     margin: 20px 0;
     font-weight: bold;
+} 
+
+@media (min-width: 1024px) {
+    .formulario input {
+        width: 50%;
+    }
+    
+    .formulario textarea {
+        width: 80%;
+        height: 20vh;
+    }
+    
+    .formulario input[type=submit] {
+        width: 30%;
+    } 
 }
+
 
 .formulario input[type=submit]:hover {
     background-color: var(--grisOscuro);
@@ -319,10 +503,24 @@ footer {
     background-color: var(--grisOscuro);
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     color: var(--gris);
+}
+
+.redes p {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    footer {
+        flex-direction: row;
+    }
+
+    .redes p {
+        display: block;
+    }
 }
 
 footer p {
@@ -341,7 +539,8 @@ footer .redes p {
 }
 
 
-footer .redes a, footer .redes img{
+footer .redes a,
+footer .redes img {
     width: 50px;
     margin: 10px;
 }
